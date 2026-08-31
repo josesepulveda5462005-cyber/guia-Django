@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def vista_uno(request):
-    return HttpResponse("Hola desde la Vista 1 de App A")
-
-def vista_dos(request):
-    return HttpResponse("Hola desde la Vista 2 de App A")
+def home(request):
+    contexto = {
+        'mensaje': '¡Hola! Logré conectar la aplicación correctamente. Objetivo cumplido.',
+        'autor': 'Jose Sepulveda'
+    }
+    return render(request, 'home.html', contexto)
